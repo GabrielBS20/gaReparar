@@ -1,0 +1,7 @@
+name: gaReparar
+author: GabrielSantos
+version: 1.0
+main: gabriel.reparar.Main
+commands:
+  reparar:
+    aliases: repair
