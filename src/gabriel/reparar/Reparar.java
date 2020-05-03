@@ -1,6 +1,5 @@
 package gabriel.reparar;
 
-import nuvemplugins.solaryeconomy.app.SolaryEconomy;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -112,12 +111,12 @@ public class Reparar implements Listener, CommandExecutor {
 
                             }else{
 
-                                if(SolaryEconomy.economia.hasBalance(p.getName(), BigDecimal.valueOf(10000))){
+                                if(Main.getEconomy().has(p, 10000)){
 
                                     hand.setDurability((short) 0);
                                     p.sendMessage("§aVocê pagou pela reparação.");
                                     p.playSound(p.getLocation(), Sound.ANVIL_USE, 1 ,1);
-                                    SolaryEconomy.economia.substractBalance(p.getName(), BigDecimal.valueOf(10000));
+                                    Main.getEconomy().withdrawPlayer(p, 10000);
 
                                 }else{
 
